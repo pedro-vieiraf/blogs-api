@@ -23,8 +23,8 @@ module.exports = {
           model: 'users',
           key: 'id'
         },
-        // onDelete: CASCADE/RESTRICT,  // não entendi muito bem
-        // onUpdate: onoo,
+        onDelete: RESTRICT,  // não entendi muito bem
+        onUpdate: RESTRICT
       },
       published: {
         allowNull: false,
