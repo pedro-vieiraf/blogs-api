@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('blogPosts', {
+    await queryInterface.createTable('blog_posts', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -23,20 +23,20 @@ module.exports = {
           model: 'users',
           key: 'id'
         },
-        onDelete: RESTRICT,  // não entendi muito bem
-        onUpdate: RESTRICT
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       published: {
         allowNull: false,
-        type: Sequelize.DATETIME
+        type: Sequelize.DATE
       },
       updated: {
         allowNull: false,
-        type: Sequelize.DATETIME
+        type: Sequelize.DATE
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('blogPosts');
+    await queryInterface.dropTable('blog_posts');
   }
 };
