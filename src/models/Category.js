@@ -1,7 +1,7 @@
 const CategorySchema = (sequelize, DataTypes) => {
   const CategoryTable = sequelize.define('Category', {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true

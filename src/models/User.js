@@ -1,7 +1,7 @@
 const UserSchema = (sequelize, DataTypes) => {
   const UserTable = sequelize.define('User', {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true

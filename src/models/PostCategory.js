@@ -1,7 +1,7 @@
 const PostCategorySchema = (sequelize, DataTypes) => {
   const PostCategoryTable = sequelize.define('PostCategory', {
     postId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true
