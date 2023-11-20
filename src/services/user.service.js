@@ -6,8 +6,8 @@ const findAllUsers = async () => {
   const users = await User.findAll({
     attributes: { exclude: ['password'] },
   });
-
-  return { status: 200, data: { users } };
+  console.log('users aqui', users);
+  return { status: 200, data: users };
 };
 
 const findByEmail = async (email) => {
@@ -33,7 +33,7 @@ const createUser = async ({ displayName, email, password, image = '' }) => {
   if (error) return { status: 400, data: { message: error.message } };
  
   const checkExistence = await findByEmail(email);
-  console.log('checkExistence =>', checkExistence);
+
   if (checkExistence) return { status: 409, data: { message: 'User already registered' } };
   
   const newUser = await User.create(user, {
