@@ -29,8 +29,9 @@ const createUser = async ({ displayName, email, password, image = '' }) => {
   
   const { error } = userSchema.validate(user);
   if (error) return { status: 400, data: { message: error.message } };
-
-  const checkExistence = findByEmail(email);
+ 
+  const checkExistence = await findByEmail(email);
+  console.log('checkExistence =>', checkExistence);
   if (checkExistence) return { status: 409, data: { message: 'User already registered' } };
   
   const newUser = await User.create(user, {
