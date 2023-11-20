@@ -3,7 +3,9 @@ const { generateToken } = require('../utils/jsonWebToken');
 const { userSchema } = require('../utils/userJoiValidation');
 
 const findAllUsers = async () => {
-  const users = await User.findAll();
+  const users = await User.findAll({
+    attributes: { exclude: ['password'] },
+  });
 
   return { status: 200, data: { users } };
 };
@@ -43,12 +45,9 @@ const createUser = async ({ displayName, email, password, image = '' }) => {
   return { status: 201, data: { token } };
 };
 
-const getUser = () => console.log('oi');
-
 module.exports = {
   findByEmail,
   findById,
   createUser,
-  getUser,
   findAllUsers,
 };
