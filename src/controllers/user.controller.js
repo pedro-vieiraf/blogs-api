@@ -8,8 +8,8 @@ const createUser = async (req, res) => {
 };
 
 const findById = async (req, res) => {
-  const { id } = req.body;
-  const response = userService.findById(id);
+  const { id } = req.params;
+  const response = await userService.findById(id);
 
   return res.status(response.status).json(response.data);
 };
