@@ -1,21 +1,19 @@
 const { Category } = require('../models');
 
 const createNewCategory = async ({ name }) => {
-  console.log('name =>', name);
   if (!name) {
     return { status: 400, data: { message: '"name" is required' } };
   }
   const newCategory = await Category.create({ name });
-  /* const newCategoryWithId = {
-    ...newCategory, // botar id aqui?
-  }; */
+
   return { status: 201, data: newCategory }; // de onde eu tiro o id? por conta do autoIncrement ele vem automagicamente?
 };
 
 const getAllCategories = async () => {
-  const categories = Category.findAll();
+  const categories = await Category.findAll();
+  console.log('categories =>', categories);
 
-  return { status: 200, data: { categories } };
+  return { status: 200, data: categories };
 };
 
 module.exports = {
