@@ -23,7 +23,7 @@ const findById = async (id) => {
     where: { id },
     attributes: { exclude: ['password'] },
   });
-  console.log('user? =>', user);
+
   if (!user) {
     return { status: 404, data: { message: 'User does not exist' } };
   }
