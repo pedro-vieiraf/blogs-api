@@ -7,6 +7,13 @@ const createNewPost = async (req, res) => {
   return res.status(response.status).json(response.data);
 };
 
+const getAllPost = async (req, res) => {
+  const response = await postService.getAllPost();
+
+  return res.status(response.status).json(response.data);
+};
+
 module.exports = {
   createNewPost,
+  getAllPost,
 };
