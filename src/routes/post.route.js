@@ -6,6 +6,7 @@ route.post('/', tokenValidation, userTokenValidation, postController.createNewPo
 route.get('/', tokenValidation, userTokenValidation, postController.getAllPost);
 route.get('/:id', tokenValidation, userTokenValidation, postController.getPostById);
 route.put('/:id', tokenValidation, userTokenValidation, postController.updatePost);
+route.delete('/:id', tokenValidation, userTokenValidation, postController.deletePost);
 
 module.exports = {
   route,

@@ -63,6 +63,7 @@ const updatePost = async ({ postId, userId, title, content }) => {
   }
   const { error } = postUpdateSchema.validate({ title, content });
   if (error) return { status: 400, data: { message: 'Some required fields are missing' } };
+  
   await BlogPost.update({ title, content }, { where: { id: postId } });
   const updatedPost = await BlogPost.findByPk(
     postId, 
@@ -74,9 +75,24 @@ const updatePost = async ({ postId, userId, title, content }) => {
   return { status: 200, data: updatedPost };
 };
 
+const deletePost = async ({ postId, userId }) => {
+  const post = await BlogPost.findByPk(postId);
+  if (!post) {
+    return { status: 404, data: { message: 'Post does not exist' } };
+  }
+  if (post.userId !== userId) {
+    return { status: 401, data: { message: 'Unauthorized user' } };
+  }
+
+  await BlogPost.destroy({ where: { id: postId } });
+
+  return { status: 204, data: {} };
+};
+
 module.exports = {
   createNewPost,
   getAllPost,
   getPostById,
   updatePost,
+  deletePost,
 };

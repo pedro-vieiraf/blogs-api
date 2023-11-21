@@ -30,9 +30,19 @@ const updatePost = async (req, res) => {
   return res.status(response.status).json(response.data);
 };
 
+const deletePost = async (req, res) => {
+  const { id } = req.params;
+  const { user } = req;
+
+  const response = await postService.deletePost({ postId: id, userId: user.id });
+
+  return res.status(response.status).json(response.data);
+};  
+
 module.exports = {
   createNewPost,
   getAllPost,
   getPostById,
   updatePost,
+  deletePost,
 };
