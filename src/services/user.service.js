@@ -23,8 +23,11 @@ const findById = async (id) => {
     where: { id },
     attributes: { exclude: ['password'] },
   });
-
-  return { status: 200, data: { user } };
+  console.log('user? =>', user);
+  if (!user) {
+    return { status: 404, data: { message: 'User does not exist' } };
+  }
+  return { status: 200, data: user };
 };
 
 const createUser = async ({ displayName, email, password, image = '' }) => {

@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
   try {
     const token = extractToken(authorization);
     const decoded = verifyToken(token);
-  
+
     req.user = decoded;
 
     next();
