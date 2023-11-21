@@ -10,8 +10,11 @@ const createNewCategory = async ({ name }) => {
 };
 
 const getAllCategories = async () => {
-  const categories = await Category.findAll();
-  console.log('categories =>', categories);
+  const categories = await Category.findAll({
+    order: [
+      ['id', 'ASC'],
+    ],
+  });
 
   return { status: 200, data: categories };
 };
