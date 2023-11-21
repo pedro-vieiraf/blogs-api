@@ -14,7 +14,15 @@ const getAllCategories = async (req, res) => {
   return res.status(response.status).json(response.data);
 };
 
+const getCategoryById = async (req, res) => {
+  const { id } = req.params;
+  const response = await categoryService.getCategoryById(id);
+
+  return res.status(response.status).json(response.data);
+};
+
 module.exports = {
   createNewCategory,
   getAllCategories,
+  getCategoryById,
 };

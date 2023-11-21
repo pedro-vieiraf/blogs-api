@@ -1,5 +1,4 @@
 const route = require('express').Router();
-// const userValidation = require('../middlewares');
 const { userController } = require('../controllers');
 const { tokenValidation } = require('../middlewares');
 const { userTokenValidation } = require('../middlewares');
