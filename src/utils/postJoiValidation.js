@@ -7,6 +7,12 @@ const postSchema = Joi.object({
   userId: Joi.number().required(),
 });
 
+const postUpdateSchema = Joi.object({
+  title: Joi.string().required(),
+  content: Joi.string().required(),
+});
+
 module.exports = {
   postSchema,
+  postUpdateSchema,
 };
