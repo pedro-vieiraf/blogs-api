@@ -49,16 +49,24 @@ Para utilizar a API é necessário usar as rotas adequadamente, aqui estão as i
 > É importante que os comandos sejam executados na ordem mostrada, pois um depende do outro 
 
 1- Para criar um usuário é necessário entrar na rota Post "http://127.0.0.1:3001/user/" e escrever um body no seguinte formato:
-  
+
+  ```
+  {
     "displayName": <STRING>,
     "email": <STRING>,
     "password": <STRING>,
     "image": <STRING>
+  }
+  ```
 
 2- Para fazer login, é necessário entrar na rota Post "http://127.0.0.1:3001/login/" e escrever o email e senha cadastrados no body
-
+  
+  ```
+  {
     "email": <STRING>,
     "password": <STRING>
+  }
+  ```
 
   > [!TIP]
   > Isso irá lhe retornar um token, é importante que você copie ele.
@@ -67,7 +75,11 @@ Para utilizar a API é necessário usar as rotas adequadamente, aqui estão as i
   > [!IMPORTANT]
   > Antes de fazer a requisição, é necessário preencher o header com "Authorization" com o valor "Bearer <Token que você copiou>"
 
+  ```
+  {
     "name": <STRING>
+  }
+  ```
 
 4- Finalmente, para criar um post, é necessário ir na rota Post "http://127.0.0.1:3001/post/"
   > [!IMPORTANT]
