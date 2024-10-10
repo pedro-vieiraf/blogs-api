@@ -1,13 +1,3 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
 # Blogs API
 
 > Esse projeto consisiste em uma API com as principais funcionalidades de um Blog no sistema Model, View e Controller além de um sistema de autenticação usando JWT (Json Web Token).
@@ -90,7 +80,7 @@ Para utilizar a API é necessário usar as rotas adequadamente, aqui estão as i
     "title": <STRING>,
     "content": <STRING>,
     "categoryIds": [INT],
-    "userId": INT
+    "userId": <INT>
   }
   ```
 Com isso você já consegue criar um usuário, categoria e post.
@@ -189,7 +179,7 @@ A rota Post "http://127.0.0.1:3001/post/" é usada para criar uma publicação.
   "title": <STRING>,
   "content": <STRING>,
   "categoryIds": [INT],
-  "userId": INT
+  "userId": <INT>
 }
 ```
 
@@ -213,9 +203,18 @@ A rota Put "http://127.0.0.1:3001/post/:id" é usada para atualizar um post já 
 
 ```
 {
-  "title": "teste 3",
-  "content": "conteúdo 2 do título 3",
-  "userId": 1
+  "title": <STRING>,
+  "content": <STRING>,
+  "userId": <INT>
 }
 ```
+
+### Delete Post
+
+A rota Delete "http://127.0.0.1:3001/post/:id" é usada para deletar o post do usuário que deu origem ao Token inserido e somente dele, sendo impossível deletar posts de outro usuário.
+
+É necessário fazer uma requisição com o Authorization no header usando o Token criado no login e o body vazio.
+
 </details>
+
+Com isso, você pode acecssar todas as rotas do código.
