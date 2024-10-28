@@ -1,6 +1,6 @@
 # Blogs API
 
-> Esse projeto consisiste em uma API com as principais funcionalidades de um Blog no sistema Model, View e Controller além de um sistema de autenticação usando JWT (Json Web Token).
+> Esse projeto consisiste em uma API com as principais funcionalidades de um Blog no sistema Model, View e Controller com Sequelize além de um sistema de autenticação usando JWT (Json Web Token).
 
 Nesse projeto eu desenvolvi os seguintes arquivos:
   - src/models;
