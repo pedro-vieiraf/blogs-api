@@ -1,6 +1,6 @@
 # Blogs API
 
-> Esse projeto consisiste em uma API com as principais funcionalidades de um Blog no sistema Model, View e Controller com Sequelize além de um sistema de autenticação usando JWT (Json Web Token).
+> Esse projeto consisiste em uma API com as principais funcionalidades de um Blog utilizando arquitetura em camadas (Model, View e Controller) com o ORM Sequelize além de um sistema de autenticação usando JWT (Json Web Token).
 
 Nesse projeto eu desenvolvi os seguintes arquivos:
   - src/models;
@@ -17,7 +17,7 @@ Realizei mudanças no seguinte arquivo:
 > [!NOTE]
 > Esse projeto utiliza Docker, é importante ter ele instalado para garantir seu funcionamento
 
-# Antes de começar
+# Antes de começar/Como executar
 É importante que, ao entrar na raiz do projeto você execute o container Docker com o seguinte comando:
 ```
 docker compose up -d --build
