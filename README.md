@@ -1,6 +1,6 @@
 # Blogs API
 
-> Esse projeto consisiste em uma API com as principais funcionalidades de um Blog utilizando arquitetura em camadas (Model, View e Controller) com o ORM Sequelize além de um sistema de autenticação usando JWT (Json Web Token).
+> Esse projeto consisiste em uma API com as principais funcionalidades de um Blog utilizando arquitetura em camadas (Model, View e Controller) com o ORM Sequelize, conectado a um banco de dados MySQL além de um sistema de autenticação usando JWT (Json Web Token).
 
 Nesse projeto eu desenvolvi os seguintes arquivos:
   - src/models;
